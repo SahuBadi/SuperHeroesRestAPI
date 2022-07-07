@@ -19,8 +19,6 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
 @Entity
 @Table(name = "superheroes")
 public class SuperHeroe implements Serializable{
@@ -51,6 +49,67 @@ public class SuperHeroe implements Serializable{
     private boolean alive;
     
 	public SuperHeroe() { super(); }
+	
+	public void kill() {
+		this.alive = false;
+	}
+	
+	public void revive() {
+		this.alive = true;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getRealName() {
+		return realName;
+	}
+
+	public void setRealName(String realName) {
+		this.realName = realName;
+	}
+
+	public Universe getUniverse() {
+		return universe;
+	}
+
+	public void setUniverse(Universe universe) {
+		this.universe = universe;
+	}
+
+	public Set<SuperPower> getSuperPowers() {
+		return superPowers;
+	}
+
+	public void setSuperPowers(Set<SuperPower> superPowers) {
+		this.superPowers = superPowers;
+	}
+
+	public boolean isAlive() {
+		return alive;
+	}
+
+	public void setAlive(boolean alive) {
+		this.alive = alive;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
 
 }
 
