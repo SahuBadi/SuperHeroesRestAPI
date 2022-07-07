@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -38,16 +39,16 @@ public class SuperHeroe implements Serializable{
     
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="universe_id", nullable=false)
-	private Universo universe;
+    private Universe universe;
     
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "superheroe_superpowers",
             joinColumns = @JoinColumn(name = "superheroe_id"),
             inverseJoinColumns = @JoinColumn(name = "superpower_id"))
-    Set<Poder> poderes = new HashSet<>();
-    
+    Set<SuperPower> superPowers = new HashSet<>();
     @Column(name="alive", columnDefinition = "boolean default true")
-	private boolean alive;
+    private boolean alive;
     
 	public SuperHeroe() { super(); }
 
