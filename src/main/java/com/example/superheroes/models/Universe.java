@@ -16,8 +16,7 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+
 @Entity
 @Table(name = "universes")
 public class Universe implements Serializable{
@@ -40,4 +39,41 @@ public class Universe implements Serializable{
     public Universe() {
         super();
     }
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Set<SuperHeroe> getSuperHeroes() {
+		return superHeroes;
+	}
+
+	public void setSuperHeroes(Set<SuperHeroe> superHeroes) {
+		this.superHeroes = superHeroes;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+    
 }

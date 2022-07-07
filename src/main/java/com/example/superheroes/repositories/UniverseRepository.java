@@ -7,5 +7,5 @@ import com.example.superheroes.models.Universe;
 
 @Repository
 public interface UniverseRepository extends JpaRepository<Universe, Long>{
-
+    Universe findByName(String name);
 }

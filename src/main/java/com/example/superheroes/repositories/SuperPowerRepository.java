@@ -7,5 +7,5 @@ import com.example.superheroes.models.SuperPower;
 
 @Repository
 public interface SuperPowerRepository extends JpaRepository<SuperPower, Long>{
-
+    SuperPower findByName(String name);
 }
