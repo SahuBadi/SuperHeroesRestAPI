@@ -31,7 +31,7 @@ public class SuperHeroeController {
     }
 
     @GetMapping("/superheroes/{id}")
-    public SuperHeroe getSuperPowerById(@PathVariable(value = "id") Long superHeroeId) throws ResourceNotFoundException {
+    public SuperHeroe getSuperHeroeById(@PathVariable(value = "id") Long superHeroeId) throws ResourceNotFoundException {
         return superHeroeService.findById(superHeroeId);
     }
 
